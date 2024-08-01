@@ -91,8 +91,6 @@ class Main():
             # THE NUMBER OF AVAILABLE HOTELS
             available_hotels = self.calculate_hotels(DRIVER)
 
-            logger.info(f"Available Hotels {available_hotels}")
-
             # LOAD THE SCRAPED HOTEL DATA
             hotel_data = self.load_hotel_data(
                 DRIVER, CHECK_IN_DATE, CHECK_OUT_DATE, available_hotels
