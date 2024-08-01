@@ -58,8 +58,6 @@ class HotelPage(Page):
                 hotel_name_element = self.wait_for_element(
                     By.XPATH, '//*[@id="topOfPage"]/div[3]/app-hotel-info-v2/button'
                 )
-                print(hotel_name_element.text)
-                
                 room_name_elements = self.wait_for_elements(
                     By.XPATH,
                     '//div[@class="roomInfo"]//h2[contains(@class, "roomName")]',
