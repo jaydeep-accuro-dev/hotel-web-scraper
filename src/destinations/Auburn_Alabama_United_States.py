@@ -1,0 +1,19 @@
+import sys
+from pathlib import Path
+from datetime import datetime, timedelta
+
+
+if __name__ == "__main__":
+    src_path = Path(__file__).resolve().parent.parent
+    sys.path.append(str(src_path))
+    
+    from main import Main
+    from utils.logger import logging
+    from utils.exception import CustomException
+
+    destination = "Auburn, Alabama, United States"
+    number_of_days = 3
+    unique_dates = [(datetime.now() + timedelta(days=i)).strftime("%d/%m/%Y") for i in range(number_of_days)]
+
+    logging.info(f"scraper is running for {destination} : {unique_dates}")
+    Main(destination, number_of_days).scrape()
