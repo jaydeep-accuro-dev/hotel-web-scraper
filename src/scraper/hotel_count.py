@@ -27,8 +27,9 @@ class HotelCount:
                     )
                 )
             )
-
-            return int(hotel_count_element.text.split()[0])
+            hotel_count = int(hotel_count_element.text.split()[0])
+            logging.info(f"succeed to calculate total hotels {hotel_count}")
+            return hotel_count
         except Exception as e:
             logging.error("failed to calculate total hotels")
             logging.error(f"{CustomException(e,sys)}")
@@ -56,6 +57,7 @@ class HotelCount:
 
                 hotel_count = max(hotel_count, len(hotel_elements))
 
+            logging.info(f"succeed to calculate available hotels {hotel_count}")
             return hotel_count
         except Exception as e:
             logging.error("failed to calculate available hotels")
